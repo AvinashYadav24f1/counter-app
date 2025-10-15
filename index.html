@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment Counter</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            min-width: 300px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+        #counter-value {
+            font-size: 4em;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 30px;
+            min-height: 1em; /* Ensure consistent height even if content is empty */
+            display: block; /* Make it block to respect margin-bottom */
+        }
+        #increment-btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            outline: none;
+        }
+        #increment-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        #increment-btn:active {
+            transform: translateY(0);
+            background-color: #21618c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Counter App</h1>
+        <span id="counter-value">0</span>
+        <button id="increment-btn">Increment</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counterValueElement = document.querySelector('#counter-value');
+            const incrementButton = document.querySelector('#increment-btn');
+
+            let counter = 0;
+
+            // Initialize the counter display
+            counterValueElement.textContent = counter;
+
+            incrementButton.addEventListener('click', () => {
+                counter++;
+                counterValueElement.textContent = counter;
+            });
+        });
+    </script>
+</body>
+</html>
